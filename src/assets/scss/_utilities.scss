@@ -1,0 +1,145 @@
+.notification-indicator {
+    position: absolute;
+    top: 7px;
+    right: 2px;
+    display: block;
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    z-index: 0;
+
+    &.notification-indicator-ripple {
+        &:before {
+            content: "";
+            display: block;
+            width: 26px;
+            height: 26px;
+            z-index: -1;
+            position: absolute;
+            top: -9px;
+            left: -9px;
+            border-radius: 100%;
+            opacity: 0;
+            transform-origin: 50% 50%;
+            mix-blend-mode: screen;
+            animation: ripple 1.2s ease-out;
+            animation-iteration-count: infinite;
+        }
+
+        background: $red;
+
+        &:before {
+            content: "";
+            background: rgba($red, .5);
+        }
+    }
+}
+
+.mobile-sidebar-toggler {
+    display: inline-block;
+    float: right;
+    padding: 5px;
+    margin: 20px;
+    border: 1px solid $border-color;
+
+    i {
+        font-size: 20px;
+    }
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+.text-yellow {
+    color: #ffcf40;
+}
+
+.btn {
+    border-radius: 6px;
+
+    &.btn-sm {
+        padding: 3px 10px;
+        font-size: 11px;
+    }
+
+    &.btn-outline-danger {
+        margin-left: auto;
+        border-color: $orange;
+        color: $orange;
+
+        &:hover {
+            background: $orange;
+            color: #fff;
+        }
+    }
+}
+
+.badge {
+    padding: 5px;
+
+    &.badge-danger {
+        background: $red;
+    }
+}
+
+.profile-image {
+    height: 30px;
+    width: 30px;
+}
+
+.user-profile-img {
+    position: relative;
+    display: inline-block;
+
+    .status-indicator {
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        right: -1px;
+        height: 13px;
+        width: 13px;
+        z-index: 1;
+        background: #fff;
+        border-radius: 25px;
+        border: 2px solid #fff;
+
+        &.online {
+            background: $green;
+
+            &.away {
+                color: $green;
+
+                &::before {
+                    color: inherit;
+                }
+            }
+
+        }
+
+        &.offline {
+            background: $text-muted;
+
+            &.away {
+                color: $gray;
+
+                &::before {
+                    color: inherit;
+                }
+            }
+        }
+
+        &.away {
+            &:before {
+                content: "z";
+                font-size: 14px;
+                font-weight: 900;
+                position: absolute;
+                top: -11px;
+                left: 5px;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: #fff;
+            }
+        }
+    }
+}
