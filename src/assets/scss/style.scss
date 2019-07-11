@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
     background: #f6f6f6;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .sidebar {
@@ -171,6 +171,10 @@ body {
                                         border: 1px solid $text-muted;
                                         border-radius: 6px;
                                         margin-right: 10px;
+
+                                        .sidebar-collapsed & {
+                                            margin-right: 0;
+                                        }
                                     }
                                 }
 
@@ -188,6 +192,10 @@ body {
                                             justify-content: center;
                                             background: $text-muted;
                                             margin-right: 10px;
+
+                                            .sidebar-collapsed & {
+                                                margin-right: 0;
+                                            }
 
                                             i {
                                                 font-size: 26px;
@@ -219,12 +227,20 @@ body {
                                             width: 2px;
                                             border-radius: 0px 2px 2px 0;
                                             background: transparent;
+
+                                            .sidebar-collapsed & {
+                                                left: -25px;
+                                            }
                                         }
 
                                         .menu-icon {
                                             font-size: 20px;
                                             margin-right: 20px;
                                             color: inherit;
+
+                                            .sidebar-collapsed & {
+                                                margin-right: 0;
+                                            }
                                         }
 
                                         .menu-title {
@@ -286,6 +302,10 @@ body {
                                     .nav-link {
                                         .user-profile-img {
                                             margin-right: 20px;
+
+                                            .sidebar-collapsed & {
+                                                margin-right: 0;
+                                            }
                                         }
                                     }
 
@@ -303,6 +323,10 @@ body {
                                                 justify-content: center;
                                                 margin-right: 20px;
                                                 background: $text-muted;
+
+                                                .sidebar-collapsed & {
+                                                    margin-right: 0;
+                                                }
 
                                                 i {
                                                     font-size: 25px;
@@ -386,6 +410,118 @@ body {
 
         &.open {
             left: 0;
+        }
+    }
+}
+
+
+
+.sidebar-collapsed {
+    .sidebar {
+        width: 70px;
+
+        .sidebar-top {
+            flex-direction: column;
+            padding: 27px 20px;
+
+            .profile-section {
+                flex-direction: column-reverse;
+                border-bottom: 1px solid $border-color;
+                padding-bottom: 7px;
+
+                .sidebar-toggler {
+                    margin-right: 0;
+                    padding-right: 0;
+                }
+            }
+
+            .sidebar-tab-switch {
+                border-bottom: 1px solid $border-color;
+
+                .nav {
+                    justify-content: center;
+                    margin: 10px 0;
+
+                    .nav-item {
+                        margin: 11px 0px;
+
+                        &.active {
+                            .nav-link {
+                                &::after {
+                                    display: none;
+                                }
+                            }
+                        }
+
+                        .nav-link {
+
+                            &.active-green,
+                            &.active-blue {
+                                &::after {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+
+                    .nav-link {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+
+        .sidebar-content {
+            padding: 0px 20px;
+
+            .tab-pane {
+                .nav {
+                    .nav-item {
+                        .nav-link {
+                            &[data-toggle="collapse"] {
+                                display: none;
+                            }
+                        }
+
+                        .brand-title,
+                        .balance-amount,
+                        .balance-redeem-btn,
+                        .remaining-allowance,
+                        .remaining-allowance-amount,
+                        .menu-title,
+                        .badge,
+                        .sidebar-search-form,
+                        .invite-coworker,
+                        .user_name {
+                            display: none !important;
+                        }
+
+                        .gold-balance {
+                            padding: 22px 0;
+                        }
+
+                        .sidebar-menu-list {
+                            align-items: center;
+                        }
+
+                        .explore-section {
+                            margin: 20px 0 0 0;
+
+                            .sidebar-menu-list {
+                                .nav-item {
+                                    &:last-child {
+                                        margin-bottom: 0;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.people-list-item {
+                            padding-top: 22px;
+                        }
+                    }
+                }
+            }
         }
     }
 }

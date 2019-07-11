@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="//cdn.materialdesignicons.com/3.7.95/css/materialdesignicons.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <title>Home</title>
 </head>
@@ -19,7 +19,7 @@
   <div class="mobile-sidebar-toggler">
     <i class="mdi mdi-menu"></i>
   </div>
-  <div class="sidebar">
+  <div class="sidebar" id="sidebar">
     <div class="sidebar-top">
       <div class="profile-section">
         <div class="sidebar-toggler">
@@ -32,15 +32,15 @@
       </div>
       <div class="sidebar-tab-switch">
         <ul class="nav" id="myTab" role="tablist">
-          <li class="nav-item active">
+          <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Home">
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
               aria-selected="true"><i class="mdi mdi-home"></i></a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Gifts">
             <a class="nav-link active-green" id="gift-tab" data-toggle="tab" href="#gift" role="tab"
               aria-controls="gift" aria-selected="false"><i class="mdi mdi-gift"></i></a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Analytics">
             <a class="nav-link active-blue" id="analytics-tab" data-toggle="tab" href="#analytics" role="tab"
               aria-controls="analytics" aria-selected="false"><i class="mdi mdi-google-analytics"></i></a>
           </li>
@@ -59,14 +59,16 @@
               aria-controls="company-dropdown">Company</a>
             <div class="collapse show" id="company-dropdown">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="All Honey">
                   <a class="nav-link" href="#">
-                    <img class="brand_image" src="assets/images/company_image.png" alt="company image">All Honey
+                    <img class="brand_image" src="assets/images/company_image.png" alt="company image"><span
+                      class="brand-title">All Honey</span>
                   </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Create Group">
                   <a class="nav-link create_group" href="#">
-                    <div class="create_group_avatar"><i class="mdi mdi-plus"></i></div>Create Group
+                    <div class="create_group_avatar"><i class="mdi mdi-plus"></i></div><span class="brand-title">Create
+                      Group</span>
                   </a>
                 </li>
               </ul>
@@ -98,41 +100,41 @@
             <a class="nav-link" data-toggle="collapse" href="#explore-dropdown" aria-expanded="true"
               aria-controls="explore-dropdown">Explore</a>
             <div class="collapse show" id="explore-dropdown">
-              <ul class="nav flex-column sub-menu sidebar-menu-list">
-                <li class="nav-item active">
+              <ul class="nav flex-column sub-menu sidebar-menu-list explore-section">
+                <li class="nav-item active" data-toggle="tooltip" data-placement="right" title="Feed">
                   <a href="#" class="nav-link">
                     <i class="menu-icon mdi mdi-account-badge-horizontal-outline"></i>
                     <span class="menu-title">Feed</span>
                     <div class="badge badge-pill badge-danger ml-auto">102</div>
                   </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Inbox">
                   <a href="#" class="nav-link">
                     <i class="menu-icon mdi mdi-inbox"></i>
                     <span class="menu-title">Inbox</span>
                   </a>
                 </li>
                 <li class="nav-item see_more">
-                  <a class="nav-link" data-toggle="collapse" href="#seemore-dropdown" aria-expanded="true"
+                  <a class="nav-link" data-toggle="collapse" href="#seemore-dropdown" aria-expanded="false"
                     aria-controls="seemore-dropdown">
                     <i class="menu-icon mdi mdi-dots-vertical"></i>
                     <span class="menu-title">See More</span>
                   </a>
-                  <div class="collapse show" id="seemore-dropdown">
+                  <div class="collapse" id="seemore-dropdown">
                     <ul class="nav flex-column sub-menu sidebar-menu-list">
-                      <li class="nav-item">
+                      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Events">
                         <a href="#" class="nav-link">
                           <i class="menu-icon mdi mdi-calendar"></i>
                           <span class="menu-title">Events</span>
                         </a>
                       </li>
-                      <li class="nav-item">
+                      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Saved">
                         <a href="#" class="nav-link">
                           <i class="menu-icon mdi mdi-bookmark-multiple"></i>
                           <span class="menu-title">Saved</span>
                         </a>
                       </li>
-                      <li class="nav-item">
+                      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Drafts">
                         <a href="#" class="nav-link">
                           <i class="menu-icon mdi mdi-file-document"></i>
                           <span class="menu-title">Draft</span>
@@ -150,7 +152,7 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item">
+          <li class="nav-item people-list-item">
             <a class="nav-link" data-toggle="collapse" href="#people-dropdown" aria-expanded="true"
               aria-controls="people-dropdown">People</a>
             <div class="collapse show" id="people-dropdown">
@@ -161,15 +163,15 @@
                 <input type="text" class="form-control" placeholder="Search Coworkers">
               </div>
               <ul class="nav flex-column sub-menu sidebar-user-list">
-                <li class="nav-item add-user-link">
+                <li class="nav-item add-user-link" data-toggle="tooltip" data-placement="right" title="Invite Coworker">
                   <a href="#" class="nav-link">
                     <div class="add-user-icon">
                       <i class="mdi mdi-plus"></i>
                     </div>
-                    Invite Coworker
+                    <span class="invite-coworker">Invite Coworker</span>
                   </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Harry Richards">
                   <a href="#" class="nav-link">
                     <div class="user-profile-img">
                       <img class="profile-image rounded-circle" src="assets/images/image_2.png" alt="profile image">
@@ -178,7 +180,7 @@
                     <span class="user_name">Harry Richards</span>
                   </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Lily Patterson">
                   <a href="#" class="nav-link">
                     <div class="user-profile-img">
                       <img class="profile-image rounded-circle" src="assets/images/image_2.png" alt="profile image">
@@ -187,7 +189,7 @@
                     <span class="user_name">Lily Patterson</span>
                   </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Bobby Jennings">
                   <a href="#" class="nav-link">
                     <div class="user-profile-img">
                       <img class="profile-image rounded-circle" src="assets/images/image_2.png" alt="profile image">
@@ -196,7 +198,7 @@
                     <span class="user_name">Bobby Jennings</span>
                   </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Marian Munoz">
                   <a href="#" class="nav-link">
                     <div class="user-profile-img">
                       <img class="profile-image rounded-circle" src="assets/images/image_2.png" alt="profile image">
@@ -205,7 +207,7 @@
                     <span class="user_name">Marian Munoz</span>
                   </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pauline Ross">
                   <a href="#" class="nav-link">
                     <div class="user-profile-img">
                       <img class="profile-image rounded-circle" src="assets/images/image_2.png" alt="profile image">
@@ -225,8 +227,8 @@
             <a class="nav-link" data-toggle="collapse" href="#gold-balance" aria-expanded="true"
               aria-controls="gold-balance">Gold Balance</a>
             <div class="collapse show gold-balance" id="gold-balance">
-              <ul class="nav flex-column sub-menu ">
-                <li class="nav-item">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Gold Balance is: 323">
                   <a href="#" class="nav-link flex-column">
                     <div class="d-flex w-100">
                       <img class="currreny-icon" src="assets/images/currreny.png" alt="currreny">
